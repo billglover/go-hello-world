@@ -1,0 +1,15 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: go-hello-world
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
+  name: go-hello-world
+  namespace: go-dev
+spec:
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/billglover/go-hello-world
